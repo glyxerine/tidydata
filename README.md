@@ -17,8 +17,11 @@ The following files are used from the raw data are tidied and analysed:
 * 'UCI HAR Dataset\train\X_train.txt': This is the training data set.
 * 'UCI HAR Dataset\train\y_train.txt': This is the training labels.
 
+## Tidy data
+Refer to 'summariseddata.csv' for the tidied data
+
 ## Code book
-Refer to codebook.txt for more information.
+Refer to 'codebook.txt' for more information.
 
 ## Instructions
 * Step 1 - Download the raw data 'getdata-projectfiles-UCI HAR Dataset.zip' and unzip it.
