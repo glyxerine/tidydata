@@ -1,0 +1,138 @@
+Variables
+=========
+
+Refer to the following documents in raw data ('getdata-projectfiles-UCI HAR Dataset.zip') for additional information about the source of variables:
+
+- 'README.txt’: Contains information about the zipped raw data.
+
+- 'features_info.txt': Shows information about the variables used on the feature vector.
+
+- 'features.txt': List of all features.
+
+These signals that were used to estimate variables of the feature vector for each pattern are retained:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions (i.e. 3 columns)
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals that are retained are: 
+
+mean(): Mean value
+std(): Standard deviation
+
+To identify the subject and the activity associated with each of the variables, 2 additional columns are added:
+
+'subject': Refers to the subject ID.
+'activity': One of the 6 associated activities (Refer to 'activity_labels.txt’ for the complete list of activities.)
+
+Header
+======
+The column headers are tidied up with the following steps, refer to Mapping section for the exact mapping:
+
+- Changing to lower case.
+
+- X, Y, Z are renamed as xaxis, yaxis, and zaxis respectively.
+
+- Any special characters are removed.
+
+Data Preparation
+================
+Data for analysis is compile by:
+
+- 'features.txt' is used as header for 'X_test.txt' (or 'X_train.txt’).
+
+- Joining 'subject_test.txt' (or 'subject_train.txt') with 'X_test.txt' (or 'X_train.txt') to provide subject information to the data set.
+
+- Joining 'y_test.txt' (or 'y_train.txt') with 'activity_labels.txt' to provide activity in text format (for readability). This is then joined to 'X_test.txt' (or 'X_train.txt’).
+
+- Columns that are not mean value or standard deviation are removed.
+
+- Header is lastly clean up (refer to Header section).
+
+
+Mapping
+=======
+
+1 subject
+2 activity
+3 tBodyAcc-mean()-X -> tbodyaccmeanxaxis
+4 tBodyAcc-mean()-Y -> tbodyaccmeanyaxis
+5 tBodyAcc-mean()-Z -> tbodyaccmeanzaxis
+6 tBodyAcc-std()-X -> tbodyaccstdxaxia
+7 tBodyAcc-std()-Y -> tbodyaccstdyaxia
+8 tBodyAcc-std()-Z -> tbodyaccstdzaxia
+9 tGravityAcc-mean()-X -> tgravityaccmeanxaxis
+10 tGravityAcc-mean()-Y -> tgravityaccmeanyaxis
+11 tGravityAcc-mean()-Z -> tgravityaccmeanzaxis
+12 tGravityAcc-std()-X -> tgravityaccstdxaxis
+13 tGravityAcc-std()-Y -> tgravityaccstdyaxis
+14 tGravityAcc-std()-Z -> tgravityaccstdzaxis
+15 tBodyAccJerk-mean()-X -> tbodyaccjerkmeanxaxis
+16 tBodyAccJerk-mean()-Y -> tbodyaccjerkmeanyaxis
+17 tBodyAccJerk-mean()-Z -> tbodyaccjerkmeanzaxis
+18 tBodyAccJerk-std()-X -> tbodyaccjerkstdxaxis
+19 tBodyAccJerk-std()-Y -> tbodyaccjerkstdyaxis
+20 tBodyAccJerk-std()-Z -> tbodyaccjerkstdzaxis
+21 tBodyGyro-mean()-X -> tbodygyromeanxaxis
+22 tBodyGyro-mean()-Y -> tbodygyromeanyaxis
+23 tBodyGyro-mean()-Z -> tbodygyromeanzaxis
+24 tBodyGyro-std()-X -> tbodygyrostdxaxis
+25 tBodyGyro-std()-Y -> tbodygyrostdyaxis
+26 tBodyGyro-std()-Z -> tbodygyrostdzaxis
+27 tBodyGyroJerk-mean()-X -> tbodygyrojerkmeanxaxis
+28 tBodyGyroJerk-mean()-Y -> tbodygyrojerkmeanyaxis
+29 tBodyGyroJerk-mean()-Z -> tbodygyrojerkmeanzaxis
+30 tBodyGyroJerk-std()-X -> tbodygyrojerkstdxaxis
+31 tBodyGyroJerk-std()-Y -> tbodygyrojerkstdyaxis
+32 tBodyGyroJerk-std()-Z -> tbodygyrojerkstdzaxis
+33 tBodyAccMag-mean() -> tbodyaccmagmean
+34 tBodyAccMag-std() -> tbodyaccmagstd
+35 tGravityAccMag-mean() -> tgravityaccmagmean
+36 tGravityAccMag-std() -> tgravityaccmagstd
+37 tBodyAccJerkMag-mean() -> tbodyaccjerkmagmean
+38 tBodyAccJerkMag-std() -> tbodyaccjerkmagstd
+39 tBodyGyroMag-mean() -> tbodygyromagmean
+40 tBodyGyroMag-std() -> tbodygyromagstd
+41 tBodyGyroJerkMag-mean() -> tbodygyrojerkmagmean
+42 tBodyGyroJerkMag-std() -> tbodygyrojerkmagstd
+43 fBodyAcc-mean()-X -> fbodyaccmeanxaxis
+44 fBodyAcc-mean()-Y -> fbodyaccmeanyaxis
+45 fBodyAcc-mean()-Z -> fbodyaccmeanzaxis
+46 fBodyAcc-std()-X -> fbodyaccstdxaxis
+47 fBodyAcc-std()-Y -> fbodyaccstdyaxis
+48 fBodyAcc-std()-Z -> fbodyaccstdzaxis
+49 fBodyAccJerk-mean()-X -> fbodyaccjerkmeanxaxis
+50 fBodyAccJerk-mean()-Y -> fbodyaccjerkmeanyaxis
+51 fBodyAccJerk-mean()-Z -> fbodyaccjerkmeanzaxis
+52 fBodyAccJerk-std()-X -> fbodyaccjerkstdxaxis
+53 fBodyAccJerk-std()-Y -> fbodyaccjerkstdyaxis
+54 fBodyAccJerk-std()-Z -> fbodyaccjerkstdzaxis
+55 fBodyGyro-mean()-X -> fbodygyromeanxaxis
+56 fBodyGyro-mean()-Y -> fbodygyromeanyaxis
+57 fBodyGyro-mean()-Z -> fbodygyromeanzaxis
+58 fBodyGyro-std()-X -> fbodygyrostdxaxis
+59 fBodyGyro-std()-Y -> fbodygyrostdyaxis
+60 fBodyGyro-std()-Z -> fbodygyrostdzaxis
+61 fBodyAccMag-mean() -> fbodyaccmagmean
+62 fBodyAccMag-std() -> fbodyaccmagstd
+63 fBodyBodyAccJerkMag-mean() -> fbodybodyaccjerkmagmean
+64 fBodyBodyAccJerkMag-std() -> fbodybodyaccjerkmagstd
+65 fBodyBodyGyroMag-mean() -> fbodybodygyromagmean
+66 fBodyBodyGyroMag-std() -> fbodybodygyromagstd
+67 fBodyBodyGyroJerkMag-mean() -> fbodybodygyrojerkmagmean
+68 fBodyBodyGyroJerkMag-std() -> fbodybodygyrojerkmagstd
